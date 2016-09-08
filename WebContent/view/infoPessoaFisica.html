@@ -1,0 +1,96 @@
+<div id="tabs">
+	<ul>	
+		<li ng-repeat="tab in tabs" 
+            ng-class="{active:isActiveTab(tab.title)}" 
+            ng-click="onClickTab(tab)">{{tab.title}}</li>
+    </ul>
+	<div id="mainView" class="jumbotron">
+		<!-- Aba informações básicas da pessoa -->
+		<div ng-show="infoPessoa">
+			<p>Em desenvolvimento</p>
+			{{pessoa}}
+		</div>
+		<!-- Aba informações de Renda -->
+		<div ng-show="infoRenda">
+			<fieldset class="container">
+				<label for="cpfCnpj">CPF: </label>
+				<input type="text" disabled="disabled" name="cpfCnpj" id="cpfCnpj" ng-model="pessoa.cpf">
+				<label for="nome">Nome: </label>
+				<input type="text" disabled="disabled" name="nome" id="nome" ng-model="pessoa.nome">
+			</fieldset>
+			<fieldset class="container">
+				<legend>Informações de Renda</legend>
+				<form name="infoRendaForm" id="infoRendaForm">
+					<label for="valorRenda">Valor da Renda: </label>
+					<input type="text" name="valorRenda" id="valorRenda" ng-model="iRenda.valorRenda" ng-required="true">
+					<label for="tipoRenda">Tipo de Renda: </label>
+					<select name="tipoRenda" id="tipoRenda" ng-model="iRenda.tipoRenda" ng-options="x.tipoRenda for x in cbTiposDeRenda" ng-required="true">
+						<option value=""></option>	
+					</select>
+					<label for="periodicidade">Periodicidade: </label>
+					<select name="periodicidade" id="periodicidade" ng-model="iRenda.periodicidade" ng-options="x.tipoPeriodicidade for x in cbTiposDePeriodicidade" ng-required="true">
+						<option value=""></option>
+					</select>
+					<label for="porcentRenda">% Renda: </label>
+					<input type="text" name="porcentRenda" id="porcentRenda" ng-model="iRenda.porcentRenda" ng-required="true">
+					<label for="moeda">Moeda: </label>
+					<select name="moeda" id="moeda" ng-model="iRenda.moeda" ng-options="x.moeda for x in cbMoedas" ng-required="true">
+						<option value=""></option>
+					</select>
+					<label for="dataBase">Data Base: </label>
+					<input type="text" name="dataBase" id="dataBase" ng-model="iRenda.dataBase" ng-required="true">
+					<label for="fonte">Fonte: </label>
+					<input type="text" name="fonte" id="fonte" ng-model="iRenda.fonte" ng-required="true">
+				</form>
+				<input type="button" name="btnAdicionar" id="btnAdicionar" value="Adicionar" ng-click="adicionarRenda(iRenda)" ng-show="showIncluir">
+				<input type="button" name="btnSalvar" id="btnSalvar" value="Salvar" ng-click="salvarEdicaoRenda(iRenda)" ng-show="!showIncluir">
+				<input type="button" name="btnCancel" id="btnCancel" value="Cancelar" ng-click="salvarEdicaoRenda(iRenda)" ng-show="!showIncluir">
+				<br/>
+				<table class="table-bordered">
+					<tr>
+						<th>Valor Renda</th>
+						<th>Moeda</th>
+						<th>Tipo Renda</th>
+						<th>% Renda</th>
+						<th>Data Base</th>
+						<th>Fonte</th>
+						<th></th>
+					</tr>
+					<tr ng-repeat="renda in pessoa.infoRenda">
+						<td>{{renda.valorRenda}}</td>
+						<td>{{renda.moeda.moeda}}</td>
+						<td>{{renda.tipoRenda.tipoRenda}}</td>
+						<td>{{renda.porcentRenda}}</td>
+						<td>{{renda.dataBase}}</td>
+						<td>{{renda.fonte}}</td>
+						<td>
+							<a href="">
+                                <span class="glyphicon glyphicon-edit" ng-click="editarRenda(renda.id)"></span>
+                            </a>
+                            &nbsp;
+                            <a href="">
+                                <span class="glyphicon glyphicon-trash" ng-click="excluirRenda(renda.id)"></span>
+                            </a>
+                        </td>
+					</tr>
+				</table>
+				<hr/>
+				<table class="table-bordered">
+					<tr>
+						<th>Valor Total Renda</th>
+						<th>Moeda</th>
+						<th>Periodicidade</th>
+					</tr>
+					<tr ng-repeat="item in somaRenda">
+						<td>{{item.valorTotalRenda}}</td>
+						<td>{{item.moeda.moeda}}</td>
+							<td>{{item.periodicidade.tipoPeriodicidade}}</td>
+						</tr>
+				</table>
+			</fieldset>
+		</div>
+	</div>
+	<div>
+		<input type="submit" name="btnSalvarPessoa" id="btnSalvarPessoa" value="Salvar Pessoa" ng-click="salvarPessoa()">
+	</div>
+</div>
