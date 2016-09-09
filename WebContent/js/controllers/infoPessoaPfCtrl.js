@@ -106,8 +106,12 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		return $scope.pessoa.infoRenda[index];
 	};
 	
-	$scope.excluirRenda = function(id){
-		
+	$scope.excluirRenda = function(item){
+		var index = $scope.pessoa.infoRenda.indexOf(item);
+		console.log("index: " + index);
+		$scope.pessoa.infoRenda.splice(index, 1);
+		$scope.infoRendaForm.$setPristine();
+		somarRenda();
 	};
 	
 	$scope.cancelEdicaoRenda = function(iRenda){
@@ -119,16 +123,17 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 	
 	$scope.salvarEdicaoRenda = function(iRenda)
 	{
+		var index = -1;
 		var item = $scope.pessoa.infoRenda.some(function(item){
 			if (parseInt(iRenda.id) == parseInt(item.id)){
 				index = $scope.pessoa.infoRenda.indexOf(item);
 			}
 		});
-		$scope.pessoa.infoRenda.splice(index, 1);
-		$scope.pessoa.infoRenda.push(angular.copy(iRenda));
+		$scope.pessoa.infoRenda.splice(index, 1,angular.copy(iRenda));
 		delete $scope.iRenda;
 		$scope.infoRendaForm.$setPristine();
 		$scope.showIncluir = true;
+		somarRenda();
 	}
 	
 	
