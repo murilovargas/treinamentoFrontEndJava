@@ -108,7 +108,6 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 	
 	$scope.excluirRenda = function(item){
 		var index = $scope.pessoa.infoRenda.indexOf(item);
-		console.log("index: " + index);
 		$scope.pessoa.infoRenda.splice(index, 1);
 		$scope.infoRendaForm.$setPristine();
 		somarRenda();
