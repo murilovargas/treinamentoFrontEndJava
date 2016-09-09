@@ -110,5 +110,26 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		
 	};
 	
+	$scope.cancelEdicaoRenda = function(iRenda){
+		delete $scope.iRenda;
+		$scope.infoRendaForm.$setPristine();
+		$scope.showIncluir = true;
+		return true;
+	}
+	
+	$scope.salvarEdicaoRenda = function(iRenda)
+	{
+		var item = $scope.pessoa.infoRenda.some(function(item){
+			if (parseInt(iRenda.id) == parseInt(item.id)){
+				index = $scope.pessoa.infoRenda.indexOf(item);
+			}
+		});
+		$scope.pessoa.infoRenda.splice(index, 1);
+		$scope.pessoa.infoRenda.push(angular.copy(iRenda));
+		delete $scope.iRenda;
+		$scope.infoRendaForm.$setPristine();
+		$scope.showIncluir = true;
+	}
+	
 	
 });

@@ -12,14 +12,15 @@
 		</div>
 		<!-- Aba informações de Renda-->
 		<div ng-show="infoRenda">
-			<fieldset class="container">
+			{{pessoa}}
+			<fieldset class="scheduler-border">
 				<label for="cpfCnpj">CPF: </label>
 				<input type="text" disabled="disabled" name="cpfCnpj" id="cpfCnpj" ng-model="pessoa.cpf">
 				<label for="nome">Nome: </label>
 				<input type="text" disabled="disabled" name="nome" id="nome" ng-model="pessoa.nome">
 			</fieldset>
-			<fieldset class="container">
-				<legend>Informações de Renda</legend>
+			<fieldset class="scheduler-border">
+				<legend class="scheduler-border">Informações de Renda</legend>
 				<form name="infoRendaForm" id="infoRendaForm">
 					<label for="valorRenda">Valor da Renda: </label>
 					<input type="text" name="valorRenda" id="valorRenda" ng-model="iRenda.valorRenda" ng-required="true">
@@ -44,7 +45,7 @@
 				</form>
 				<input type="button" name="btnAdicionar" id="btnAdicionar" value="Adicionar" ng-click="adicionarRenda(iRenda)" ng-show="showIncluir">
 				<input type="button" name="btnSalvar" id="btnSalvar" value="Salvar" ng-click="salvarEdicaoRenda(iRenda)" ng-show="!showIncluir">
-				<input type="button" name="btnCancel" id="btnCancel" value="Cancelar" ng-click="salvarEdicaoRenda(iRenda)" ng-show="!showIncluir">
+				<input type="button" name="btnCancel" id="btnCancel" value="Cancelar" ng-click="cancelEdicaoRenda(iRenda)" ng-show="!showIncluir">
 				<br/>
 				<table class="table-bordered">
 					<tr>
