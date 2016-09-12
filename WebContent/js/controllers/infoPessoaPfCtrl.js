@@ -1,4 +1,4 @@
-angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope, pessoa, tiposDeRenda, tiposDePeriodicidade, moedas){	
+angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope, pessoa, tiposDeRenda, tiposDePeriodicidade, moedas, pessoasAPI){	
 	$scope.infoPessoa = true;
 	$scope.infoRenda = false;
 	$scope.showIncluir = true;
@@ -133,6 +133,10 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		$scope.infoRendaForm.$setPristine();
 		$scope.showIncluir = true;
 		somarRenda();
+	}
+	
+	$scope.salvarPessoa = function(){
+		pessoasAPI.savePessoa($scope.pessoa);
 	}
 	
 	

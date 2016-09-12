@@ -2,6 +2,11 @@ angular.module("prototipoTelas").factory("pessoasAPI", function($http){
 	var _getPessoa = function(id){
 		return $http.get("http://localhost:3412/pessoas/" + id);
 	};
+	
+	var _savePessoa = function(pessoa){
+		return $http.put("http://localhost:3412/pessoa/", pessoa);
+	};
+	
 	var _getPessoasAll = function(){
 		return $http.get("http://localhost:3412/pessoas");
 	};
@@ -22,6 +27,7 @@ angular.module("prototipoTelas").factory("pessoasAPI", function($http){
 		getPessoasAll: _getPessoasAll,
 		getTiposDeRenda: _getTiposDeRenda,
 		getTiposDePeriodicidade: _getTiposDePeriodicidade,
-		getMoedas: _getMoedas
+		getMoedas: _getMoedas,
+		savePessoa: _savePessoa
 	}
 })
