@@ -4,7 +4,7 @@ angular.module("prototipoTelas").factory("pessoasAPI", function($http){
 	};
 	
 	var _savePessoa = function(pessoa){
-		return $http.put("http://localhost:3412/pessoa/", pessoa);
+		return $http.post("http://localhost:3412/pessoa/", pessoa);
 	};
 	
 	var _getPessoasAll = function(){
