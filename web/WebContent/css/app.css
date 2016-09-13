@@ -40,3 +40,125 @@ fieldset.scheduler-border {
     -webkit-box-shadow:  0px 0px 0px 0px #000;
             box-shadow:  0px 0px 0px 0px #000;
 }
+.jumbotron {
+			
+			text-align: left;
+			margin-top: 5px;
+			
+		}
+		.table {
+			margin-top: 20px;
+		}
+		.form-control {
+			margin-bottom: 5px;
+		}
+		.selecionado {
+			background-color: yellow;
+		}
+		.negrito {
+			font-weight: bold;
+		}
+		.cab{
+		text-align: center;
+
+		}	
+
+   .form-imput {
+  display: block;
+  width: 90%;
+  height: 34px;
+  padding: 8px 20px;
+  margin-left: 50px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+.div-area{
+    position:relative;
+    left:5px;
+    top:1em;
+    width:320px;
+    height:270px;
+
+}
+.div-centro
+{
+	width: 350px;
+	height: 51px;
+	position: absolute;
+	top: 47px;
+	left: 415px;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.div-estado-centro
+{
+	
+    width: 300px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 415px;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.div-profissao
+{
+	
+	width: 300px;
+	height: 30px;
+	position: absolute;
+	top: 147px;
+	left: 415px;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.div-profissao-combo
+{
+	
+	width: 250px;
+	height: 30px;
+	position: absolute;
+	top: 147px;
+	left: 520px;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.div-estado-civi
+{
+	
+    width: 250px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 520px;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.div-genero
+{
+	
+    width: 250px;
+	height: 51px;
+	position: absolute;
+	top: 47px;
+	left: 520px;
+	margin-top: -50px;
+	margin-left: -50px;
+}

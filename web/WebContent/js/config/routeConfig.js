@@ -24,7 +24,15 @@ angular.module("prototipoTelas").config(function ($routeProvider) {
 			},
 			moedas: function(pessoasAPI){
 				return pessoasAPI.getMoedas();
+			},
+			estadosCivis: function(pessoasAPI){
+				return pessoasAPI.getEstadosCivis();
+			},
+			profissoes: function(pessoasAPI){
+				return pessoasAPI.getProfissoes();
+				
 			}
+			
 		}
 	});
 	

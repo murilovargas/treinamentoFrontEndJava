@@ -1,8 +1,8 @@
-angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope, pessoa, tiposDeRenda, tiposDePeriodicidade, moedas, pessoasAPI){	
+angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope, pessoa, tiposDeRenda, tiposDePeriodicidade, moedas,profissoes, pessoasAPI,estadosCivis){	
 	$scope.infoPessoa = true;
 	$scope.infoRenda = false;
 	$scope.showIncluir = true;
-	
+	$scope.app = "Cadastrar pessoa Fisica";
 	$scope.tabs = [{
         title: 'Pessoa Física'
     }, {
@@ -48,6 +48,8 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 	
 	$scope.cbTiposDeRenda = tiposDeRenda.data;
 	$scope.cbTiposDePeriodicidade = tiposDePeriodicidade.data;
+	$scope.cbEstadosCivis = estadosCivis.data;
+	$scope.cbProfissoes = profissoes.data;
 	$scope.cbMoedas = moedas.data;
 	
 	$scope.adicionarRenda = function(iRenda){
@@ -78,7 +80,7 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		
 		index = 0;
 		
-		$scope.cbTiposDePeriodicidade.forEach(function(item){
+		$scope.tiposDePeriodicidade.forEach(function(item){
 			if (item.tipoPeriodicidade == $scope.iRenda.periodicidade.tipoPeriodicidade){
 				index = $scope.cbTiposDePeriodicidade.indexOf(item);
 			}
@@ -96,6 +98,10 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		
 		$scope.iRenda.moeda = $scope.cbMoedas[index];
 	};
+	
+	
+	
+	
 	
 	var acharRenda = function(id){		
 		var item = $scope.pessoa.infoRenda.some(function(item){
@@ -139,5 +145,27 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		pessoasAPI.savePessoa($scope.pessoa);
 	}
 	
+	
+	
+			$scope.genero = [
+							{nome: "Masculino", codigo: 14, categoria: "Genero"},
+							{nome: "Feminino", codigo: 15, categoria: "Genero"},
+							
+						];
+
+			$scope.estadoCivilCasado = [
+							{nome: "Casado", codigo: 1, categoria: "EstadoCivil"},
+							{nome: "Solteiro", codigo: 2, categoria: "EstadoCivil"},
+							
+						];
+
+			$scope.profissao = [
+							{nome: "Analista", codigo: 1, categoria: "Profissão"},
+							{nome: "Engenheiro", codigo: 2, categoria: "Profissão"},
+							
+						];			
+
+
+
 	
 });

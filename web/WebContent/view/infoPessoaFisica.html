@@ -7,8 +7,92 @@
 	<div id="mainView" class="jumbotron">
 		<!-- Aba informações básicas da pessoa -->
 		<div ng-show="infoPessoa">
-			<p>Em desenvolvimento</p>
-			{{pessoa}}
+			<p>{{app}}</p>
+			<div class="jumbotron">
+ 
+   
+   <div class="div-area">
+		  <form class="form-horizontal" name="form1">
+		    
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="cpf">CPF:</label>
+		      <div class="col-sm-10">
+		        <input name="cpf" type="text" ng-model="contato.cpf" class="form-imput" id="cpf" placeholder="CPF" onKeyPress="MascaraCPF(form1.cpf);" onBlur="ValidarCPF(form1.cpf);" maxlength="14">
+		      </div>
+		    </div>
+
+		     <div class="form-group">
+		      <label class="control-label col-sm-2" for="nome">Nome:</label>
+		      <div class="col-sm-10">
+		        <input type="nome" ng-model="contato.nome" class="form-imput" id="nome" placeholder="Nome:">
+		      </div>
+		    </div>
+
+
+		  
+		  <div class="form-group">
+				  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Data nascimento:</label>
+				  <div class="col-xs-10">
+				    <input  name="data" class="form-imput" type="text" id="example-datetime-local-input" onKeyPress="MascaraData(form1.data);" onBlur= "form1.data);" maxlength="10">
+				  </div>
+			</div> 
+		
+		  <div class="div-centro">
+		      <label class="control-label col-sm-2" for="genero">Genero:</label>
+		  </div>
+
+		  <div class="div-genero">
+		               <select class="form-control" ng-model="contato.genero" ng-options="genero.nome 
+		                      for genero in genero | orderBy:'nome'">
+				               <option value="">Selecione um Genero</option>
+			           </select>
+		 </div>
+
+
+           <div class="div-estado-centro">
+		       <label class="control-label col-sm-2" for="estadoCivil">Estado Civil:</label>
+		   </div>
+
+  				  <div class="div-estado-civi">
+		                 <select class="form-control" ng-model="contato.estadoCivilCasado" ng-options="x.estadoCivil
+		                      for x in cbEstadosCivis">		                      
+				               <option value="">Estado civil</option>
+			             </select>
+		          </div>
+
+
+		       <div class="div-profissao">
+		             <label class="control-label col-sm-2" for="estadoCivil">Profissão:</label>
+		        </div>
+
+				<div class="div-profissao-combo">
+		             <select class="form-control" ng-model="contato.profissao" ng-options="x.profissao 
+		                      for x in cbProfissoes">
+				               <option value="">Profissão</option>
+			             </select>
+		          </div>
+
+
+
+
+		    <div class="form-group">
+		      <div class="col-sm-offset-2 col-sm-10">
+		        <div class="checkbox">
+		          <label><input type="checkbox">Investidor Qualificado</label>
+		        </div>
+		      </div>
+		    </div>
+		    
+		    <div class="form-group">
+		      <div class="col-sm-offset-2 col-sm-10">
+		        <button type="submit" class="btn btn-default">Submit</button>
+		      </div>
+		    </div>
+		 
+
+		  </form>
+	</div>     
+</div>
 		</div>
 		<!-- Aba informações de Renda-->
 		<div ng-show="infoRenda">

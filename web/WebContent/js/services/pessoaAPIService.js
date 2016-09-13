@@ -15,6 +15,14 @@ angular.module("prototipoTelas").factory("pessoasAPI", function($http){
 		return $http.get("http://localhost:3412/tiposDeRenda");
 	}
 	
+	var _getEstadosCivis = function(){
+		return $http.get("http://localhost:3412/estadoCivil");
+	}
+	
+	var _getProfissoes = function(){
+		return $http.get("http://localhost:3412/profissoes");
+	}
+	
 	var _getTiposDePeriodicidade = function(){
 		return $http.get("http://localhost:3412/tiposDePeriodicidade");
 	}
@@ -28,6 +36,8 @@ angular.module("prototipoTelas").factory("pessoasAPI", function($http){
 		getTiposDeRenda: _getTiposDeRenda,
 		getTiposDePeriodicidade: _getTiposDePeriodicidade,
 		getMoedas: _getMoedas,
-		savePessoa: _savePessoa
+		savePessoa: _savePessoa,
+		getEstadosCivis: _getEstadosCivis,
+		getProfissoes: _getProfissoes
 	}
 })
