@@ -113,10 +113,10 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 	};
 	
 	$scope.excluirRenda = function(item){
-		var index = $scope.pessoa.infoRenda.indexOf(item);
-		$scope.pessoa.infoRenda.splice(index, 1);
-		$scope.infoRendaForm.$setPristine();
-		somarRenda();
+		/*var index = $scope.pessoa.infoRenda.indexOf(item);*/
+		$scope.pessoa.infoRenda.splice(item, 1);
+		/*$scope.infoRendaForm.$setPristine();*/
+		/*somarRenda();*/
 	};
 	
 	$scope.cancelEdicaoRenda = function(iRenda){

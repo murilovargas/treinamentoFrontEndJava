@@ -149,12 +149,12 @@
 						<td>{{renda.dataBase}}</td>
 						<td>{{renda.fonte}}</td>
 						<td>
-							<a href="">
-                                <span class="glyphicon glyphicon-edit" ng-click="editarRenda(renda.id)"></span>
+							<a href="" ng-click="editarRenda(renda.id)">
+                                <span class="glyphicon glyphicon-edit"></span>
                             </a>
                             &nbsp;
-                            <a href="">
-                                <span class="glyphicon glyphicon-trash" ng-click="excluirRenda(renda)"></span>
+                            <a href="" ng-click="excluirRenda($index)">
+                                <span class="glyphicon glyphicon-trash"></span>
                             </a>
                         </td>
 					</tr>
