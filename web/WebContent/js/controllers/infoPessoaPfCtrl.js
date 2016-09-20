@@ -80,7 +80,7 @@ angular.module("prototipoTelas").controller("infoPessoaPfCtrl", function ($scope
 		
 		index = 0;
 		
-		$scope.tiposDePeriodicidade.forEach(function(item){
+		$scope.cbTiposDePeriodicidade.forEach(function(item){
 			if (item.tipoPeriodicidade == $scope.iRenda.periodicidade.tipoPeriodicidade){
 				index = $scope.cbTiposDePeriodicidade.indexOf(item);
 			}

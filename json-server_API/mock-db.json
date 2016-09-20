@@ -1,0 +1,90 @@
+{
+	"estadosCivis": [
+		{"id": 1, "estadoCivil": "Solteiro(a)"},
+		{"id": 2, "estadoCivil": "Casado(a)"},
+		{"id": 3, "estadoCivil": "Divorciado(a)"},
+		{"id": 4, "estadoCivil": "Viúvo(a)"},
+		{"id": 5, "estadoCivil": "Separado(a)"},
+		{"id": 6, "estadoCivil": "Companheiro(a)"}
+	],
+	"profissoes": [
+		{"CBO": 1, "profissao": "Administrador"},
+		{"CBO": 2, "profissao": "Contabilista"},
+		{"CBO": 3, "profissao": "Corretor de Seguros"},
+		{"CBO": 4, "profissao": "Analista de Sistemas"},
+		{"CBO": 5, "profissao": "Pescador Profissional"},
+		{"CBO": 6, "profissao": "Zootecnista"},
+		{"CBO": 7, "profissao": "Sommelier"},
+		{"CBO": 8, "profissao": "Taxista"}
+	],
+	"tiposDeRenda": [
+		{"tipoRenda":"Salario"},
+		{"tipoRenda":"Dividendos"},
+		{"tipoRenda":"Informal"}
+	],
+	"tiposDePeriodicidade": [
+		{"tipoPeriodicidade":"Anual"},
+		{"tipoPeriodicidade":"Mensal"},
+		{"tipoPeriodicidade":"Semanal"}
+	],
+
+	"moedas": [
+		{"moeda":"Real"},
+		{"moeda":"Euro"},
+		{"moeda":"Dollar"}
+	],
+	"pessoas": [
+		{"id": 1, 
+		"cpf": "33966177182", 
+		"nome": "Joao da Silva", 
+		"dataNascimento": "10/10/1978", 
+		"genero": "Masculino", 
+		"estadoCivil": {"id": 2, "estadoCivil": "Casado(a)"}, 
+		"profissao": {"CBO": 4, "profissao": "Analista de Sistemas"},
+		"infoRenda":
+			[
+				{
+					"id": 1,
+					"valorRenda": 8000, 
+					"tipoRenda": {"tipoRenda":"Salario"},
+					"porcentRenda": 80,
+					"moeda": {"moeda":"Real"},
+					"periodicidade": {"tipoPeriodicidade":"Anual"},
+					"fonte": "Empresa X",
+					"dataBase": "10/10/2016"
+				},
+				{
+					"id": 2,
+					"valorRenda": 2000, 
+					"tipoRenda": {"tipoRenda":"Informal"},
+					"porcentRenda": 20,
+					"moeda": {"moeda":"Real"},
+					"periodicidade": {"tipoPeriodicidade":"Anual"},
+					"fonte": "Empresa X",
+					"dataBase": "10/10/2016"
+				}
+			]
+		},
+		{"id": 2, 
+		"cpf": "34466477398", 
+		"nome": "Marcos Antonio Silva", 
+		"dataNascimento": "10/10/1979", 
+		"genero": "Masculino", 
+		"estadoCivil": {"id": 1, "estadoCivil": "Solteiro(a)"}, 
+		"profissao": {"CBO": 3, "profissao": "Corretor de Seguros"},
+		"infoRenda":
+			[
+				{
+					"id": 1,
+					"valorRenda": 5000, 
+					"tipoRenda": {"tipoRenda":"Salario"},
+					"porcentRenda": 80,
+					"moeda": {"moeda":"Real"},
+					"periodicidade": {"tipoPeriodicidade":"Anual"},
+					"fonte": "Empresa ZZ",
+					"dataBase": "10/10/2016"
+				}
+			]
+		}
+	]
+}
